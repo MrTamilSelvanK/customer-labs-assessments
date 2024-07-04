@@ -58,8 +58,12 @@ function App() {
       alert("Enter segment name");
       return;
     }
-    if (dynamicDropdown.includes("")) {
+    if (dynamicDropdown.length === 0) {
       alert("Select at least one schema");
+      return;
+    }
+    if (dynamicDropdown.includes("")) {
+      alert("Complete pending schema");
       return;
     }
 
@@ -88,6 +92,8 @@ function App() {
     setSegmentName("");
     setSchemaUpdate([...schemaOptions]);
     setDynamicDropdown([]);
+
+    alert("Segment successfully  saved");
   };
 
   return (
